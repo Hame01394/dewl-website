@@ -1318,3 +1318,55 @@ a {
     font-size: 14px;
   }
 }
+
+/* MOBILE: ONE PANEL AT A TIME — HORIZONTAL SWIPE */
+@media (max-width: 760px) {
+  .main-panels {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 0 !important;
+    padding: 0;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .main-panels::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-panels > .panel,
+  .main-panels > .active-call-panel {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  /* Caller first */
+  .main-panels > .dialer-panel {
+    order: 1;
+  }
+
+  /* Wallet second */
+  .main-panels > .account-panel {
+    order: 2;
+  }
+
+  /* Active Call remains hidden on mobile */
+  .main-panels > .active-call-panel {
+    display: none !important;
+  }
+
+  .dewl-page {
+    overflow-x: hidden;
+  }
+}
+
