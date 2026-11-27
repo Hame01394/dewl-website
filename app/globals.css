@@ -1,0 +1,1392 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --navy: #06356d;
+  --blue: #0755a6;
+  --blue-light: #e8f1ff;
+  --green: #08a94f;
+  --green-dark: #07833e;
+  --ink: #102f56;
+  --muted: #647b98;
+  --line: #dce6f3;
+  --pale: #f4f8ff;
+  --white: #ffffff;
+  --red: #e83c48;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f2f6ff;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dewl-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 22px;
+  background: linear-gradient(180deg, #f5f8ff 0%, #edf3ff 100%);
+}
+
+/* HEADER */
+
+.site-header {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background: linear-gradient(110deg, #052653 0%, #0755a6 65%, #0878bd 100%);
+  color: #ffffff;
+  padding: 0 20px;
+  border-bottom: 3px solid #08a94f;
+  box-shadow: 0 3px 12px rgba(6, 53, 109, 0.16);
+}
+
+.site-header .logo,
+.site-header .logo-text,
+.site-header .logo-text small,
+.site-header .main-nav a,
+.site-header .account-link {
+  color: #ffffff !important;
+  background: transparent;
+}
+
+.site-header .logo-icon {
+  background: #08a94f;
+  color: #ffffff;
+}
+
+.site-header .main-nav a:hover,
+.site-header .account-link:hover {
+  color: #a8e8c2;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 57px;
+  height: 57px;
+  display: grid;
+  place-items: center;
+  color: #0872c8;
+  position: relative;
+}
+
+.logo-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 3;
+  transform: rotate(-12deg);
+}
+
+.logo-text {
+  color: #07519a;
+  font: 800 36px Manrope, sans-serif;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.logo-text small {
+  display: block;
+  margin-top: 6px;
+  color: #183d67;
+  font: 700 10px "DM Sans", sans-serif;
+  letter-spacing: .02em;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 19px;
+  color: #17385e;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: .2s;
+}
+
+.main-nav a:hover {
+  color: var(--blue);
+  background: #f0f5ff;
+}
+
+.main-nav .nav-current {
+  background: #0756a8;
+  color: white;
+  border-radius: 9px;
+}
+
+.main-nav .nav-current:hover {
+  background: #06488d;
+  color: white;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.language-select,
+.account-link {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 1px solid #e5ebf3;
+  border-radius: 25px;
+  background: white;
+  color: #17385e;
+  box-shadow: 0 2px 7px #123a6310;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.language-select select {
+  max-width: 85px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  appearance: none;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.language-select > svg:first-child {
+  color: var(--blue);
+}
+
+.account-link {
+  white-space: nowrap;
+}
+
+.account-link svg:first-child {
+  color: var(--blue);
+}
+
+/* HERO BANNER */
+
+.hero-banner {
+  max-width: 1600px;
+  height: 275px;
+  margin: 0 auto 23px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 12px 12px;
+  background-color: #b8d9f4;
+  background-image:
+    linear-gradient(90deg, rgba(232, 243, 255, .97) 0%, rgba(232, 243, 255, .83) 29%, rgba(232, 243, 255, .12) 58%, rgba(232, 243, 255, 0) 100%),
+    url("/images/dewl-hero-banner.webp");
+  background-size: cover;
+  background-position: center 52%;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 36px 55px;
+  max-width: 680px;
+}
+
+.hero-kicker {
+  display: block;
+  color: #1765a9;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  margin-bottom: 9px;
+}
+
+.hero-overlay h1 {
+  color: #062e60;
+  font: 800 clamp(36px, 4vw, 55px)/.99 Manrope, sans-serif;
+  letter-spacing: -2.5px;
+  margin: 0 0 12px;
+}
+
+.hero-overlay p {
+  color: #103c70;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 0 0 15px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--green);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 28px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.hero-button:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+/* THREE MAIN PANELS */
+
+.main-panels {
+  max-width: 1600px;
+  margin: 0 auto 23px;
+  display: grid;
+  grid-template-columns: 1.02fr 1fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.panel {
+  min-width: 0;
+  background: white;
+  border: 1px solid #d6e2f1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px #123d7010;
+}
+
+.panel-header {
+  min-height: 59px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 21px;
+  background: linear-gradient(105deg, #0756a4, #06366e);
+  color: white;
+}
+
+.panel-header > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font: 800 18px Manrope, sans-serif;
+}
+
+.panel-header > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #e4efff;
+  font-size: 11px;
+}
+
+.panel-header > a:hover {
+  color: white;
+}
+
+.demo-tag {
+  padding: 6px 9px;
+  border: 1px solid #ffffff40;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+/* ACCOUNT PANEL */
+
+.account-content {
+  padding: 13px;
+}
+
+.greeting-box {
+  padding: 15px 14px;
+  background: #eaf2ff;
+  border-radius: 10px;
+}
+
+.greeting-box h2 {
+  color: var(--navy);
+  font: 800 17px Manrope, sans-serif;
+  margin: 0 0 3px;
+}
+
+.greeting-box p {
+  color: #173c68;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.balance-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.balance-line > strong {
+  color: #078b4b;
+  font: 800 clamp(25px, 2.4vw, 37px) Manrope, sans-serif;
+  letter-spacing: -1.5px;
+}
+
+.add-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 13px;
+  background: linear-gradient(110deg, #09a951, #078344);
+  border: 0;
+  border-radius: 25px;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: .2s;
+}
+
+.add-credit:hover {
+  background: #05763a;
+}
+
+.demo-label {
+  display: block;
+  color: #7c91a9;
+  font-size: 8px;
+  letter-spacing: .09em;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.rates-section {
+  padding: 17px 3px 3px;
+}
+
+.rates-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--navy);
+  font: 800 15px Manrope, sans-serif;
+  margin: 0 0 13px;
+}
+
+.rates-section h3 svg {
+  color: var(--blue);
+}
+
+.rate-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 11px;
+  border-radius: 9px;
+  background: #eaf2ff;
+}
+
+.rate-flag {
+  font-size: 27px;
+}
+
+.rate-description {
+  flex: 1;
+  min-width: 0;
+}
+
+.rate-description strong,
+.rate-description small {
+  display: block;
+}
+
+.rate-description strong {
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.rate-description small {
+  color: #536f90;
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.rate-price {
+  color: #0756a4;
+  font-size: 10px;
+  text-align: right;
+}
+
+.rate-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 11px 4px 0;
+  padding: 12px;
+  background: #e2f0ff;
+  color: #184a7d;
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.rate-note svg {
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+/* DIALER PANEL */
+
+.dialer-content {
+  padding: 18px 20px 15px;
+}
+
+.input-label {
+  display: block;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.destination-select,
+.phone-entry {
+  height: 47px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 12px;
+  background: #fbfdff;
+  border: 1px solid #cfdced;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 3px #173b5f08;
+  margin-bottom: 13px;
+}
+
+.destination-flag {
+  font-size: 22px;
+}
+
+.destination-select select {
+  flex: 1;
+  min-width: 0;
+  appearance: none;
+  outline: none;
+  border: 0;
+  background: transparent;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.destination-select > svg {
+  color: var(--navy);
+}
+
+.phone-entry {
+  margin-bottom: 13px;
+  color: var(--blue);
+}
+
+.phone-entry input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.phone-entry input::placeholder {
+  color: #8b9bb0;
+}
+
+.phone-code {
+  font-size: 11px;
+  font-weight: 800;
+  color: #4e6683;
+  white-space: nowrap;
+}
+
+/* NUMBER KEYPAD */
+
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px 9px;
+  margin-bottom: 12px;
+}
+
+.number-pad button {
+  height: 49px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #edf3ff;
+  border: 1px solid #d9e5fa;
+  border-radius: 12px;
+  color: var(--navy);
+  box-shadow: 0 2px 4px #123d7008;
+  transition: .15s;
+}
+
+.number-pad button:hover {
+  background: #dceaff;
+  border-color: #a9c8f1;
+}
+
+.number-pad button:active {
+  transform: scale(.96);
+}
+
+.number-pad button strong {
+  font: 800 19px Manrope, sans-serif;
+  line-height: 1;
+}
+
+.number-pad button small {
+  color: #617a9a;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin-top: 3px;
+}
+
+.main-call-button {
+  width: min(100%, 245px);
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 28px;
+  background: linear-gradient(110deg, #08b44e, #0a9a53);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 4px 10px #08a94f25;
+  transition: .2s;
+}
+
+.main-call-button:hover {
+  background: #07863f;
+  transform: translateY(-1px);
+}
+
+.call-notice {
+  padding: 9px 11px;
+  margin: 11px 0 0;
+  background: #eaf3ff;
+  border-left: 3px solid #1766a8;
+  color: #24537e;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 4px;
+}
+
+/* ACTIVE CALL PANEL */
+
+.active-call-panel {
+  min-width: 0;
+  min-height: 100%;
+  padding: 24px 20px;
+  background: radial-gradient(ellipse at 50% 40%, #104b83 0%, #07386d 52%, #052c59 100%);
+  border: 1px solid #174e83;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 0 4px 12px #123d7018;
+}
+
+.call-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin-bottom: 27px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #13d875;
+  box-shadow: 0 0 10px #13d87570;
+}
+
+.caller-avatar {
+  width: 118px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3e8bff, #0753c9);
+  box-shadow: 0 9px 24px #001d473c;
+  color: white;
+  margin-bottom: 13px;
+}
+
+.caller-avatar svg {
+  stroke-width: 1.8;
+}
+
+.active-call-panel > h2 {
+  color: white;
+  font: 800 23px Manrope, sans-serif;
+  margin: 0 0 4px;
+}
+
+.caller-number {
+  color: #e3efff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.call-demo-warning {
+  color: #b9d9fa;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  margin: 12px 0 22px;
+  text-align: center;
+}
+
+.call-controls {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: auto;
+}
+
+.call-controls button {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 0;
+  color: white;
+}
+
+.call-controls button > svg {
+  width: 54px;
+  height: 54px;
+  padding: 16px;
+  border-radius: 50%;
+  background: #ffffff20;
+  transition: .2s;
+}
+
+.call-controls button:hover > svg {
+  background: #ffffff39;
+}
+
+.call-controls button small {
+  color: #e4efff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.call-controls .control-selected > svg {
+  background: #1e7ac5;
+}
+
+.call-controls .end-call > svg {
+  background: var(--red);
+}
+
+.call-controls .end-call:hover > svg {
+  background: #c92735;
+}
+
+.call-panel-foot {
+  color: #b9d1ea;
+  font-size: 9px;
+  line-height: 1.5;
+  text-align: center;
+  margin: 22px 0 0;
+}
+
+.call-mini-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  width: 100%;
+  max-width: 220px;
+}
+
+.call-mini-keypad button {
+  height: 36px;
+  border: 1px solid #ffffff35;
+  border-radius: 8px;
+  background: #ffffff17;
+  color: white;
+  font-weight: 700;
+}
+
+.close-call-keypad {
+  border: 1px solid #ffffff55;
+  background: transparent;
+  color: white;
+  padding: 8px 12px;
+  margin-top: 12px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+/* BOTTOM FEATURE STRIP */
+
+.feature-strip {
+  max-width: 1600px;
+  min-height: 83px;
+  margin: 0 auto 17px;
+  padding: 14px 13px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  background: linear-gradient(110deg, #eaf1ff, #e4edff);
+  border: 1px solid #e0e9fa;
+  border-radius: 14px;
+}
+
+.feature-item {
+  min-height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  padding: 0 12px;
+  border-right: 1px solid #b8cbea;
+  color: #0750a0;
+}
+
+.feature-item:last-child {
+  border-right: 0;
+}
+
+.feature-item svg {
+  flex-shrink: 0;
+  stroke-width: 2.4;
+}
+
+.feature-item span {
+  color: #123d72;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* FOOTER */
+
+.site-footer {
+  max-width: 1600px;
+  margin: auto;
+  padding: 15px 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(110deg, #052653 0%, #0755a6 65%, #0878bd 100%);
+  color: #ffffff;
+  border-top: 3px solid #08a94f;
+  box-shadow: 0 -3px 12px rgba(6, 53, 109, 0.16);
+  font-size: 10px;
+}
+
+.site-footer p,
+.site-footer span,
+.site-footer small {
+  color: #ffffff;
+}
+
+.site-footer a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.site-footer a:hover {
+  color: #a8e8c2;
+}
+
+/* TABLET AND HALF-DESKTOP */
+
+@media (max-width: 1150px) {
+  .dewl-page {
+    padding: 0 15px;
+  }
+
+  .site-header {
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .logo-text {
+    font-size: 29px;
+  }
+
+  .main-nav a {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .header-actions {
+    gap: 7px;
+  }
+
+  /* KEEP ALL THREE PANELS IN ONE ROW */
+
+  .main-panels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .active-call-panel {
+    grid-column: auto;
+    min-height: 350px;
+  }
+
+  .call-controls {
+    max-width: 390px;
+  }
+
+  .feature-item {
+    gap: 7px;
+    padding: 0 7px;
+  }
+
+  .feature-item span {
+    font-size: 9px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 390px) {
+  .dewl-page {
+    padding: 0 10px;
+  }
+
+  .site-header {
+    min-height: 75px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 12px 5px;
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .logo-icon svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-text {
+    font-size: 27px;
+  }
+
+  .logo-text small {
+    font-size: 8px;
+  }
+
+  .main-nav {
+    order: 3;
+    flex-basis: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    border-top: 1px solid var(--line);
+    padding-top: 9px;
+    gap: 2px;
+  }
+
+  .main-nav a {
+    padding: 9px 11px;
+    font-size: 10px;
+  }
+
+  .main-nav a:nth-child(3),
+  .main-nav a:nth-child(4),
+  .main-nav a:nth-child(5) {
+    display: none;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+  .language-select,
+  .account-link {
+    height: 35px;
+    padding: 0 8px;
+    gap: 5px;
+    font-size: 9px;
+  }
+
+  .language-select select {
+    max-width: 59px;
+    font-size: 9px;
+  }
+
+  .account-link {
+    font-size: 0;
+  }
+
+  .account-link svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .hero-banner {
+    height: 230px;
+    margin-bottom: 13px;
+    background-position: center;
+  }
+
+  .hero-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #eaf4ffed 0%, #eaf4ffb0 58%, #eaf4ff00 100%);
+  }
+
+  .hero-overlay {
+    z-index: 2;
+    padding: 27px 21px;
+  }
+
+  .hero-kicker {
+    font-size: 7px;
+    max-width: 240px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 38px;
+    letter-spacing: -1.7px;
+  }
+
+  .hero-overlay p {
+    font-size: 12px;
+  }
+
+  .hero-button {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+
+  /* THREE PANELS SIDE BY SIDE ON MOBILE */
+
+  .main-panels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .account-panel,
+  .dialer-panel,
+  .active-call-panel {
+    grid-column: auto;
+  }
+
+  .panel-header {
+    min-height: 53px;
+    padding: 0 8px;
+  }
+
+  .panel-header > span:first-child {
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .account-content {
+    padding: 9px;
+  }
+
+  .balance-line > strong {
+    font-size: 25px;
+  }
+
+  .dialer-content {
+    padding: 10px 9px 12px;
+  }
+
+  .number-pad {
+    gap: 5px;
+  }
+
+  .number-pad button {
+    height: 42px;
+  }
+
+  .number-pad button strong {
+    font-size: 16px;
+  }
+
+  .active-call-panel {
+    min-height: 350px;
+    padding: 15px 8px;
+  }
+
+  .caller-avatar {
+    width: 75px;
+    height: 75px;
+  }
+
+  .active-call-panel > h2 {
+    font-size: 17px;
+  }
+
+  .caller-number {
+    font-size: 11px;
+  }
+
+  .call-controls {
+    gap: 2px;
+  }
+
+  .call-controls button > svg {
+    width: 35px;
+    height: 35px;
+    padding: 9px;
+  }
+
+  .call-controls button small {
+    font-size: 8px;
+  }
+
+  .feature-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 9px;
+  }
+
+  .feature-item {
+    justify-content: flex-start;
+    min-height: 51px;
+    border-right: 0;
+    border-bottom: 1px solid #c7d7ef;
+    padding: 7px 9px;
+  }
+
+  .feature-item:nth-last-child(-n+1) {
+    border-bottom: 0;
+  }
+
+  .feature-item span {
+    font-size: 10px;
+  }
+
+  .feature-item svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 15px 4px 20px;
+    font-size: 9px;
+  }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 390px) {
+  .logo-text {
+    font-size: 23px;
+  }
+
+  .logo-icon {
+    width: 35px;
+  }
+
+  .language-select {
+    padding: 0 6px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 34px;
+  }
+
+  .hero-overlay {
+    padding-left: 16px;
+  }
+
+  .balance-line {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .add-credit {
+    padding: 10px 15px;
+  }
+
+  .call-controls button > svg {
+    width: 35px;
+    height: 35px;
+    padding: 9px;
+  }
+}
+
+/* MOBILE HEADER AND FOOTER — KEEP DEWL BRANDING */
+
+@media (max-width: 760px) {
+  .site-header {
+    background: linear-gradient(
+      110deg,
+      #052653 0%,
+      #0755a6 65%,
+      #0878bd 100%
+    );
+    color: #ffffff;
+    border-bottom: 3px solid #08a94f;
+  }
+
+  .site-header .logo,
+  .site-header .logo-text,
+  .site-header .logo-text small,
+  .site-header .main-nav a,
+  .site-header .account-link {
+    color: #ffffff !important;
+  }
+
+  .site-footer {
+    background: linear-gradient(
+      110deg,
+      #052653 0%,
+      #0755a6 65%,
+      #0878bd 100%
+    );
+    color: #ffffff;
+    border-top: 3px solid #08a94f;
+    padding: 15px 10px 22px;
+  }
+
+  .site-footer p,
+  .site-footer span,
+  .site-footer small,
+  .site-footer a {
+    color: #ffffff;
+  }
+}
+
+/* SMALL SCREEN PANEL ADJUSTMENTS */
+
+@media (max-width: 760px) {
+  .main-panels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .main-panels > * {
+    min-width: 0;
+  }
+
+  .panel-header {
+    padding: 0 7px;
+  }
+
+  .panel-header > span:first-child {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .panel-header > a {
+    font-size: 9px;
+  }
+
+  .account-content,
+  .dialer-content {
+    padding: 8px;
+  }
+
+  .greeting-box {
+    padding: 9px;
+  }
+
+  .greeting-box h2 {
+    font-size: 13px;
+  }
+
+  .greeting-box p {
+    font-size: 10px;
+  }
+
+  .rate-card {
+    gap: 5px;
+    padding: 8px 6px;
+  }
+
+  .rate-flag {
+    font-size: 19px;
+  }
+
+  .rate-description strong {
+    font-size: 10px;
+  }
+
+  .rate-description small {
+    font-size: 8px;
+  }
+
+  .rate-price {
+    font-size: 9px;
+  }
+
+  .destination-select,
+  .phone-entry {
+    height: 39px;
+    gap: 5px;
+    padding: 0 6px;
+  }
+
+  .destination-select select,
+  .phone-entry input {
+    font-size: 10px;
+  }
+
+  .destination-flag {
+    font-size: 17px;
+  }
+
+  .phone-code {
+    font-size: 9px;
+  }
+
+  .number-pad {
+    gap: 5px;
+  }
+
+  .number-pad button {
+    height: 39px;
+  }
+
+  .number-pad button strong {
+    font-size: 15px;
+  }
+
+  .main-call-button {
+    min-height: 39px;
+    font-size: 11px;
+    gap: 5px;
+  }
+
+  .call-notice,
+  .rate-note {
+    font-size: 8px;
+    padding: 7px;
+  }
+
+  .active-call-panel {
+    padding: 14px 7px;
+  }
+
+  .call-status {
+    font-size: 10px;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+
+  .caller-avatar {
+    width: 65px;
+    height: 65px;
+  }
+
+  .active-call-panel > h2 {
+    font-size: 16px;
+  }
+
+  .caller-number {
+    font-size: 10px;
+  }
+
+  .call-demo-warning {
+    font-size: 7px;
+    margin: 10px 0 15px;
+  }
+
+  .call-controls {
+    gap: 2px;
+  }
+
+  .call-controls button > svg {
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+  }
+
+  .call-controls button small {
+    font-size: 7px;
+  }
+
+  .call-panel-foot {
+    font-size: 8px;
+    margin-top: 13px;
+  }
+}

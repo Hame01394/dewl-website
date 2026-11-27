@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/habto/Documents/dewl-website/app/page.tsx"],"sourcesContent":["\nimport DEWLPage from \"@/components/DEWLPage\";\n\nexport default function HomePage() {\n  return <DEWLPage language=\"en\" />;\n}\n"],"names":["HomePage","language"],"mappings":";;;;;AACA;;;AAEe,SAASA;IACtB,qBAAO,8OAAC,kIAAQ;QAACC,UAAS;;;;;;AAC5B"}},
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}}]
+}
