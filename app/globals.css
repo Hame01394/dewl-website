@@ -637,7 +637,7 @@ a {
   border-radius: 4px;
 }
 
-/* ACTIVE CALL PANEL */
+/* ACTIVE CALL PANEL - DESKTOP */
 
 .active-call-panel {
   min-width: 0;
@@ -908,8 +908,31 @@ a {
     min-height: 350px;
   }
 
+  .panel-header {
+    padding: 0 12px;
+  }
+
+  .panel-header > span:first-child {
+    font-size: 15px;
+    gap: 7px;
+  }
+
+  .account-content {
+    padding: 10px;
+  }
+
+  .dialer-content {
+    padding: 14px 12px;
+  }
+
   .call-controls {
     max-width: 390px;
+  }
+
+  .call-controls button > svg {
+    width: 45px;
+    height: 45px;
+    padding: 12px;
   }
 
   .feature-item {
@@ -922,9 +945,9 @@ a {
   }
 }
 
-/* MOBILE */
+/* MOBILE HEADER AND FOOTER */
 
-@media (max-width: 390px) {
+@media (max-width: 760px) {
   .dewl-page {
     padding: 0 10px;
   }
@@ -935,6 +958,22 @@ a {
     flex-wrap: wrap;
     padding: 12px 5px;
     gap: 12px;
+    background: linear-gradient(
+      110deg,
+      #052653 0%,
+      #0755a6 65%,
+      #0878bd 100%
+    );
+    color: #ffffff;
+    border-bottom: 3px solid #08a94f;
+  }
+
+  .site-header .logo,
+  .site-header .logo-text,
+  .site-header .logo-text small,
+  .site-header .main-nav a,
+  .site-header .account-link {
+    color: #ffffff !important;
   }
 
   .logo-icon {
@@ -960,7 +999,7 @@ a {
     flex-basis: 100%;
     overflow-x: auto;
     justify-content: flex-start;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid #ffffff30;
     padding-top: 9px;
     gap: 2px;
   }
@@ -1012,7 +1051,12 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #eaf4ffed 0%, #eaf4ffb0 58%, #eaf4ff00 100%);
+    background: linear-gradient(
+      90deg,
+      #eaf4ffed 0%,
+      #eaf4ffb0 58%,
+      #eaf4ff00 100%
+    );
   }
 
   .hero-overlay {
@@ -1039,209 +1083,16 @@ a {
     font-size: 11px;
   }
 
-  /* THREE PANELS SIDE BY SIDE ON MOBILE */
+  /* MOBILE: TWO PANELS ONLY */
 
   .main-panels {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     margin-bottom: 15px;
   }
 
-  .account-panel,
-  .dialer-panel,
   .active-call-panel {
-    grid-column: auto;
-  }
-
-  .panel-header {
-    min-height: 53px;
-    padding: 0 8px;
-  }
-
-  .panel-header > span:first-child {
-    font-size: 12px;
-    gap: 5px;
-  }
-
-  .account-content {
-    padding: 9px;
-  }
-
-  .balance-line > strong {
-    font-size: 25px;
-  }
-
-  .dialer-content {
-    padding: 10px 9px 12px;
-  }
-
-  .number-pad {
-    gap: 5px;
-  }
-
-  .number-pad button {
-    height: 42px;
-  }
-
-  .number-pad button strong {
-    font-size: 16px;
-  }
-
-  .active-call-panel {
-    min-height: 350px;
-    padding: 15px 8px;
-  }
-
-  .caller-avatar {
-    width: 75px;
-    height: 75px;
-  }
-
-  .active-call-panel > h2 {
-    font-size: 17px;
-  }
-
-  .caller-number {
-    font-size: 11px;
-  }
-
-  .call-controls {
-    gap: 2px;
-  }
-
-  .call-controls button > svg {
-    width: 35px;
-    height: 35px;
-    padding: 9px;
-  }
-
-  .call-controls button small {
-    font-size: 8px;
-  }
-
-  .feature-strip {
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 9px;
-  }
-
-  .feature-item {
-    justify-content: flex-start;
-    min-height: 51px;
-    border-right: 0;
-    border-bottom: 1px solid #c7d7ef;
-    padding: 7px 9px;
-  }
-
-  .feature-item:nth-last-child(-n+1) {
-    border-bottom: 0;
-  }
-
-  .feature-item span {
-    font-size: 10px;
-  }
-
-  .feature-item svg {
-    width: 21px;
-    height: 21px;
-  }
-
-  .site-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 9px;
-    padding: 15px 4px 20px;
-    font-size: 9px;
-  }
-}
-
-/* EXTRA SMALL MOBILE */
-
-@media (max-width: 390px) {
-  .logo-text {
-    font-size: 23px;
-  }
-
-  .logo-icon {
-    width: 35px;
-  }
-
-  .language-select {
-    padding: 0 6px;
-  }
-
-  .hero-overlay h1 {
-    font-size: 34px;
-  }
-
-  .hero-overlay {
-    padding-left: 16px;
-  }
-
-  .balance-line {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .add-credit {
-    padding: 10px 15px;
-  }
-
-  .call-controls button > svg {
-    width: 35px;
-    height: 35px;
-    padding: 9px;
-  }
-}
-
-/* MOBILE HEADER AND FOOTER — KEEP DEWL BRANDING */
-
-@media (max-width: 760px) {
-  .site-header {
-    background: linear-gradient(
-      110deg,
-      #052653 0%,
-      #0755a6 65%,
-      #0878bd 100%
-    );
-    color: #ffffff;
-    border-bottom: 3px solid #08a94f;
-  }
-
-  .site-header .logo,
-  .site-header .logo-text,
-  .site-header .logo-text small,
-  .site-header .main-nav a,
-  .site-header .account-link {
-    color: #ffffff !important;
-  }
-
-  .site-footer {
-    background: linear-gradient(
-      110deg,
-      #052653 0%,
-      #0755a6 65%,
-      #0878bd 100%
-    );
-    color: #ffffff;
-    border-top: 3px solid #08a94f;
-    padding: 15px 10px 22px;
-  }
-
-  .site-footer p,
-  .site-footer span,
-  .site-footer small,
-  .site-footer a {
-    color: #ffffff;
-  }
-}
-
-/* SMALL SCREEN PANEL ADJUSTMENTS */
-
-@media (max-width: 760px) {
-  .main-panels {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+    display: none !important;
   }
 
   .main-panels > * {
@@ -1249,6 +1100,7 @@ a {
   }
 
   .panel-header {
+    min-height: 53px;
     padding: 0 7px;
   }
 
@@ -1275,6 +1127,19 @@ a {
   }
 
   .greeting-box p {
+    font-size: 10px;
+  }
+
+  .balance-line {
+    gap: 7px;
+  }
+
+  .balance-line > strong {
+    font-size: 25px;
+  }
+
+  .add-credit {
+    padding: 10px 11px;
     font-size: 10px;
   }
 
@@ -1343,50 +1208,113 @@ a {
     padding: 7px;
   }
 
-  .active-call-panel {
-    padding: 14px 7px;
+  .feature-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 9px;
   }
 
-  .call-status {
+  .feature-item {
+    justify-content: flex-start;
+    min-height: 51px;
+    border-right: 0;
+    border-bottom: 1px solid #c7d7ef;
+    padding: 7px 9px;
+  }
+
+  .feature-item:last-child {
+    border-bottom: 0;
+  }
+
+  .feature-item span {
     font-size: 10px;
-    gap: 5px;
-    margin-bottom: 15px;
   }
 
-  .caller-avatar {
-    width: 65px;
-    height: 65px;
+  .feature-item svg {
+    width: 21px;
+    height: 21px;
   }
 
-  .active-call-panel > h2 {
-    font-size: 16px;
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 15px 10px 22px;
+    font-size: 9px;
+    background: linear-gradient(
+      110deg,
+      #052653 0%,
+      #0755a6 65%,
+      #0878bd 100%
+    );
+    color: #ffffff;
+    border-top: 3px solid #08a94f;
   }
 
-  .caller-number {
+  .site-footer p,
+  .site-footer span,
+  .site-footer small,
+  .site-footer a {
+    color: #ffffff;
+  }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 390px) {
+  .logo-text {
+    font-size: 23px;
+  }
+
+  .logo-icon {
+    width: 35px;
+  }
+
+  .language-select {
+    padding: 0 6px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 34px;
+  }
+
+  .hero-overlay {
+    padding-left: 16px;
+  }
+
+  .balance-line {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .add-credit {
+    padding: 10px 15px;
+  }
+
+  .main-panels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .panel-header {
+    padding: 0 6px;
+  }
+
+  .panel-header > span:first-child {
     font-size: 10px;
+    gap: 4px;
   }
 
-  .call-demo-warning {
-    font-size: 7px;
-    margin: 10px 0 15px;
+  .account-content,
+  .dialer-content {
+    padding: 7px;
   }
 
-  .call-controls {
-    gap: 2px;
+  .number-pad button {
+    height: 36px;
   }
 
-  .call-controls button > svg {
-    width: 34px;
-    height: 34px;
-    padding: 8px;
-  }
-
-  .call-controls button small {
-    font-size: 7px;
-  }
-
-  .call-panel-foot {
-    font-size: 8px;
-    margin-top: 13px;
+  .number-pad button strong {
+    font-size: 14px;
   }
 }
